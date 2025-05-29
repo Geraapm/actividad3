@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Promedios</title>
+    <!-- Enlazar el archivo CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Promedios</h1>
+        
+        <div class="input-section">
+            <input type="number" id="notaInput" placeholder="Ingrese nota (0-10)" min="0" max="10" step="0.1">
+            <button onclick="agregarNota()">Agregar Nota</button>
+            <button class="btn-calcular" onclick="calcularPromedio()">Calcular Promedio</button>
+            <button class="btn-limpiar" onclick="limpiarNotas()">Limpiar Todo</button>
+        </div>
+        
+        <div id="error" class="error"></div>
+        
+          <!-- Aquí se mostrarán las notas ingresadas -->
+        <div class="notas-titulo">Notas Ingresadas:</div>
+        <div class="notas-lista" id="notasListaContainer">
+        
+        
+        <div class="notas-lista" id="notasLista">
+            <div style="color: #999; text-align: center; font-style: italic;">
+                No hay notas ingresadas
+            </div>
+        </div>
+        
+        <div class="resultado" id="resultado" style="display: none;">
+            <div class="promedio" id="promedioTexto"></div>
+            <div id="estadoTexto"></div>
+        </div>
+    </div>
+
+    <!-- Enlazar el archivo JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
