@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad5</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <main>
+        <!-- SECCIÓN PROMEDIOS -->
+        <section id="promedios" class="seccion">
+            <h1>Calculadora de Promedios</h1>
+            <div class="input-section">
+                <input type="number" id="notaInput" placeholder="Ingrese nota (0-10)" min="0" max="10" step="0.1">
+                <button onclick="agregarNota()">Agregar Nota</button>
+                <button class="btn-calcular" onclick="calcularPromedio()">Calcular Promedio</button>
+                <button class="btn-limpiar" onclick="limpiarNotas()">Limpiar Todo</button>
+            </div>
+
+            <div id="error" class="error"></div>
+
+            <div class="notas-titulo">Notas Ingresadas:</div>
+            <div class="notas-lista" id="notasListaContainer">
+                <div class="notas-lista" id="notasLista">
+                    <div class="no-notas"> No hay notas ingresadas</div>
+                    </div>
+                </div>
+
+            <div class="resultado" id="resultado" style="display: none;">
+                <div class="promedio" id="promedioTexto"></div>
+                <div id="estadoTexto"></div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN CONJETURA -->
+        <section id="collatz" class="seccion oculto">
+            <h1>Conjetura de Collatz</h1>
+            <div class="input-section">
+                <label for="number-input">Ingrese un número:</label>
+                <input type="number" id="number-input">
+                <button id="step-button">Calcular</button>
+            </div>
+            <div id="result-message"></div>
+            <div id="sequence-container"></div>
+        </section>
+
+        <!-- SECCIÓN TAREAS -->
+        <section id="tareas" class="seccion oculto">
+            <h1>Lista de Tareas</h1>
+            <div id="formulario">
+                <input type="text" id="taskInput" placeholder="Añadir nueva tarea" required>
+                <button id="addTaskBtn">Añadir</button>
+            </div>
+            <ul id="lista-tareas"></ul>
+        </section>
+    </main>
+
+    <script src="js/promedios.js"></script>
+    <script src="js/Collatz.js"></script>
+    <script src="js/ListadeTareas.js"></script>
+    <script>
+        function mostrarSeccion(id) {
+            document.querySelectorAll('.seccion').forEach(sec => sec.classList.add('oculto'));
+            document.getElementById(id).classList.remove('oculto');
+        }
+    </script>
+</body>
+</html>
